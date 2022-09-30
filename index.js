@@ -1,15 +1,14 @@
-const title = document.querySelector("h2");
+const bd = document.querySelector("body");
 
-function handleTitleClick() {
-  const currentColor = title.style.color;
-  let newColor;
-  if (currentColor === "blue") {
-    newColor = "tomato";
+function handleResize() {
+  const size = window.innerWidth;
+  if (size >= 1200) {
+    bd.style.backgroundColor = "orange";
+  } else if (size < 1200 && size > 900) {
+    bd.style.backgroundColor = "purple";
   } else {
-    newColor = "blue";
+    bd.style.backgroundColor = "deepskyblue";
   }
-
-  title.style.color = newColor;
 }
 
-title.addEventListener("click", handleTitleClick);
+window.addEventListener("resize", handleResize);
