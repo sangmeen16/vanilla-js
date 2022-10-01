@@ -36,7 +36,7 @@ const superEventHandler = {
     title.classList.toggle("clicked");
   },
 
-  handleResize: function () {
+  handleResize_1: function () {
     const size = window.innerWidth;
 
     if (size >= 1200) {
@@ -45,6 +45,24 @@ const superEventHandler = {
       bd.style.backgroundColor = "purple";
     } else {
       bd.style.backgroundColor = "deepskyblue";
+    }
+  },
+
+  handleResize_2: function () {
+    const size = window.innerWidth;
+    const BIG_SCREEN = "bigScreen";
+    const MIDIUM_SCREEN = "mediumScreen";
+    const SMALL_SCREEN = "smallScreen";
+
+    if (size >= 1200) {
+      bd.classList.add(BIG_SCREEN);
+      bd.classList.remove(MIDIUM_SCREEN);
+    } else if (size < 1200 && size > 900) {
+      bd.classList.add(MIDIUM_SCREEN);
+      bd.classList.remove(SMALL_SCREEN);
+    } else {
+      bd.classList.add(SMALL_SCREEN);
+      bd.classList.remove(MIDIUM_SCREEN);
     }
   },
 
@@ -57,11 +75,8 @@ const superEventHandler = {
   },
 };
 
-window.addEventListener("resize", superEventHandler.handleResize);
+window.addEventListener("resize", superEventHandler.handleResize_2);
 
-// title.addEventListener("click", handleTitleClick1);
-//
-// title.addEventListener("click", handleTitleClick3);
 title.addEventListener("click", superEventHandler.handleTitleClick4);
 title.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
 title.addEventListener("mouseleave", superEventHandler.handleMouseLeave);

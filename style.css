@@ -9,3 +9,15 @@ h1 {
 .big-size {
   font-size: 3rem;
 }
+
+.bigScreen {
+  background-color: orange;
+}
+
+.mediumScreen {
+  background-color: purple;
+}
+
+.smallScreen {
+  background-color: deepskyblue;
+}
