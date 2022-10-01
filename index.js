@@ -1,60 +1,67 @@
 const bd = document.querySelector("body");
 const title = document.querySelector(".bd .hello h1");
 
-function handleTitleClick1() {
-  const currentColor = title.style.color;
-  let newColor;
+const superEventHandler = {
+  handleTitleClick1: function () {
+    const currentColor = title.style.color;
+    let newColor;
 
-  if (currentColor === "tomato") {
-    newColor = "cornflowerblue";
-  } else {
-    newColor = "tomato";
-  }
-  title.style.color = newColor;
-}
+    if (currentColor === "tomato") {
+      newColor = "cornflowerblue";
+    } else {
+      newColor = "tomato";
+    }
+    title.style.color = newColor;
+  },
 
-function handleTitleClick2() {
-  const clickedClass = "clicked";
-  if (title.className === clickedClass) {
-    title.className = "";
-  } else {
-    title.className = clickedClass;
-  }
-}
+  handleTitleClick2: function () {
+    const clickedClass = "clicked";
+    if (title.className === clickedClass) {
+      title.className = "";
+    } else {
+      title.className = clickedClass;
+    }
+  },
 
-function handleTitleClick3() {
-  const clickedClass = "clicked";
-  if (title.classList.contains(clickedClass)) {
-    title.classList.remove(clickedClass);
-  } else {
-    title.classList.add(clickedClass);
-  }
-}
+  handleTitleClick3: function () {
+    const clickedClass = "clicked";
+    if (title.classList.contains(clickedClass)) {
+      title.classList.remove(clickedClass);
+    } else {
+      title.classList.add(clickedClass);
+    }
+  },
 
-function handleResize() {
-  const size = window.innerWidth;
+  handleTitleClick4: function () {
+    title.classList.toggle("clicked");
+  },
 
-  if (size >= 1200) {
-    bd.style.backgroundColor = "orange";
-  } else if (size < 1200 && size > 900) {
-    bd.style.backgroundColor = "purple";
-  } else {
-    bd.style.backgroundColor = "deepskyblue";
-  }
-}
+  handleResize: function () {
+    const size = window.innerWidth;
 
-function handleMouseEnter() {
-  title.innerText = "Mouse is here!";
-}
+    if (size >= 1200) {
+      bd.style.backgroundColor = "orange";
+    } else if (size < 1200 && size > 900) {
+      bd.style.backgroundColor = "purple";
+    } else {
+      bd.style.backgroundColor = "deepskyblue";
+    }
+  },
 
-function handleMouseLeave() {
-  title.innerText = "Mouse is leave!";
-}
+  handleMouseEnter: function () {
+    title.innerText = "Mouse is here!";
+  },
 
-window.addEventListener("resize", handleResize);
+  handleMouseLeave: function () {
+    title.innerText = "Mouse is leave!";
+  },
+};
+
+window.addEventListener("resize", superEventHandler.handleResize);
 
 // title.addEventListener("click", handleTitleClick1);
 //
-title.addEventListener("click", handleTitleClick3);
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
+// title.addEventListener("click", handleTitleClick3);
+title.addEventListener("click", superEventHandler.handleTitleClick4);
+title.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
+title.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
