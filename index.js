@@ -22,6 +22,15 @@ function handleTitleClick2() {
   }
 }
 
+function handleTitleClick3() {
+  const clickedClass = "clicked";
+  if (title.classList.contains(clickedClass)) {
+    title.classList.remove(clickedClass);
+  } else {
+    title.classList.add(clickedClass);
+  }
+}
+
 function handleResize() {
   const size = window.innerWidth;
 
@@ -45,6 +54,7 @@ function handleMouseLeave() {
 window.addEventListener("resize", handleResize);
 
 // title.addEventListener("click", handleTitleClick1);
-title.addEventListener("click", handleTitleClick2);
+//
+title.addEventListener("click", handleTitleClick3);
 title.addEventListener("mouseenter", handleMouseEnter);
 title.addEventListener("mouseleave", handleMouseLeave);
