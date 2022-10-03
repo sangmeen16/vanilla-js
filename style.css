@@ -1,7 +1,17 @@
-h1 {
-  color: cornflowerblue;
-}
-
 .hidden {
   display: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+input {
+  height: fit-content;
+  margin: 0 0.2rem;
+}
+
+h4,
+p {
+  margin: 0;
 }

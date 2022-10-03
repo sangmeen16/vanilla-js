@@ -8,13 +8,28 @@
 </head>
 
 <body>
-    <form id=login-form>
-        <input required maxlength="15" type="text" placeholder="what is your name" />
-        <input type="submit" value="Log-In" />
-    </form>
+    <form id="gameForm">
+        <h1>Random Number Game</h1>
+        <div class="flex">
+            <h2>Generate a number between 0 and </h2>
+            <input id="maxNumber" type="number" />
+        </div>
 
-    <h1 id="greeting" class="hidden"></h1>
-    <script src="index.js"></script>
+        <div class="flex">
+            <h4>Guess the number:</h4>
+            <input id="guessNumber" type="number" />
+            <input type="submit" value="Play!" />
+        </div>
+
+
+
+        <div id="resultArea" class="hidden">
+            <p id="score"></p>
+            <h4 id="result"></h4>
+        </div>
+
+
+        <script src="index.js"></script>
 </body>
 
 </html>
