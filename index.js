@@ -20,18 +20,18 @@ function getRandomInt(max) {
 function onLoginSubmit(event) {
   event.preventDefault();
 
-  let maxNumber = maxNumInput.value;
-  let guessNumber = guessNumInput.value;
+  let maxNumber = parseInt(maxNumInput.value);
+  let guessNumber = parseInt(guessNumInput.value);
   let machineNumber = getRandomInt(maxNumber);
 
   if (maxNumber === "" || guessNumber === "") {
-    alert("값을 입력해주세요");
+    alert("값을 입력해주세요!!");
     resultArea.classList.add(HIDDEN_CLASSNAME);
   } else if (maxNumber <= 0) {
-    alert("최대값을 0보다 크게 입력해주세요");
+    alert("최대값을 0보다 크게 입력해주세요!!");
     resultArea.classList.add(HIDDEN_CLASSNAME);
   } else if (guessNumber < 0) {
-    alert("추측값을 0이상 입력해주세요");
+    alert("추측값을 0이상 입력해주세요!!");
     resultArea.classList.add(HIDDEN_CLASSNAME);
   } else if (maxNumber < guessNumber) {
     alert("추측값이 최대값보다 큽니다!!");
@@ -41,7 +41,7 @@ function onLoginSubmit(event) {
   }
   score.innerText = `You chose: ${guessNumber}, the machine chose: ${machineNumber}`;
 
-  if (machineNumber != guessNumber) {
+  if (machineNumber !== guessNumber) {
     result.innerText = "You Lose";
   } else {
     result.innerText = "You Win";
