@@ -11,7 +11,7 @@ function getRandomInt(max) {
   const result1 = Array.from({ length: max }, () =>
     Math.floor(Math.random() * max)
   );
-  result1.push(parseInt(max));
+  result1.push(max);
   const result2 = result1[Math.floor(Math.random() * result1.length)];
 
   return result2;
