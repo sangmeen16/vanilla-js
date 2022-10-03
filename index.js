@@ -44,7 +44,7 @@ function onLoginSubmit(event) {
   if (machineNumber !== guessNumber) {
     result.innerText = "You Lose";
   } else {
-    result.innerText = "You Win";
+    result.innerText = "You Won";
   }
 }
 
