@@ -2,22 +2,6 @@ h1 {
   color: cornflowerblue;
 }
 
-.clicked {
-  color: tomato;
-}
-
-.big-size {
-  font-size: 3rem;
-}
-
-.bigScreen {
-  background-color: orange;
-}
-
-.mediumScreen {
-  background-color: purple;
-}
-
-.smallScreen {
-  background-color: deepskyblue;
+.hidden {
+  display: none;
 }
