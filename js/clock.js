@@ -19,7 +19,7 @@ function getClock() {
   );
   const diffSec = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
 
-  clock.innerText = `${diffDay}d ${diffHour}h ${diffMin}m ${diffSec}s`;
+  // clock.innerText = `${diffDay}d ${diffHour}h ${diffMin}m ${diffSec}s`;
 }
 
 getClock();
