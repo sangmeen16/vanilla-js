@@ -48,4 +48,4 @@ function onLoginSubmit(event) {
   }
 }
 
-gameForm.addEventListener("submit", onLoginSubmit);
+// gameForm.addEventListener("submit", onLoginSubmit);
